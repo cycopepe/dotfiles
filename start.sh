@@ -44,6 +44,51 @@ echo "intellij done" >> $log_file
 #sudo apt-get -y install curl git
 
 #aws cli v2
+sudo apt-get -y install curl
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
-sudo ./aws/install
+sudo ./aws/install -y
+
+#spectre
+sudo apt-get -y install python3-pip
+sudo apt-get -y install python3-virtualenv
+#virtualenv --version
+mkdir sceptre-python-env
+cd sceptre-phyton-env
+virtualenv ven
+source venv/bin/activate
+pip install sceptre
+cd ..
+
+#java
+#sdkman
+
+#node
+#yarn
+#nvm
+#typscript
+
+#lambdas
+#serverless framework
+#sam cli
+
+#docker
+#docker-ce
+
+#kubernetes
+#kubectl
+#kubectx kubi
+#octant kubelens
+#kubeseal
+#minikube k3s kind
+#helm
+#flixctl
+#istioctl
+
+#kafka
+#kafkactl
+
+#db
+#psql
+#DBaever
+
