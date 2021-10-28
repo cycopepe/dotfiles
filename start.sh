@@ -41,15 +41,16 @@ echo "intellij done" >> $log_file
 #check how to install (not necessary for the moment)
 
 #asdf - needs homebrew
-#sudo apt-get -y install curl git
 
 #aws cli v2
+# TODO: check who to run it for 2nd time without intervention
 sudo apt-get -y install curl
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install -y
 
 #spectre
+#sudo apt-get -y install python-software-properties
 sudo apt-get -y install python3-pip
 sudo apt-get -y install python3-virtualenv
 #virtualenv --version
@@ -62,11 +63,26 @@ cd ..
 
 #java
 #sdkman
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+#sdk version
 
 #node
+sudo apt-get -y install nodejs
+#node -version
+
+sudo apt-get -y install npm
+#npm -v
+
 #yarn
+sudo npm install --global yarn
+# yarn --version
+
 #nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
 #typscript
+sudo npm install typescript -g
 
 #lambdas
 #serverless framework
@@ -91,4 +107,3 @@ cd ..
 #db
 #psql
 #DBaever
-
