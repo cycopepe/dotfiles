@@ -86,24 +86,83 @@ sudo npm install typescript -g
 
 #lambdas
 #serverless framework
+sudo npm install -g serveless
+# serverless --version
+
 #sam cli
+curl https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+sudo ./sam-installation/install
+#sam --version
 
 #docker
 #docker-ce
 
+#options
+
+#sudo yum update -y
+#sudo amazon-linux-extras install docker
+
+#or
+# remo oldversions
+#sudo apt-get remove docker docker-engine docker.io containerd runc
+
+#sudo apt-get install \
+#    ca-certificates \
+#    curl \
+#    gnupg \
+#    lsb-release
+#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+#sudo apt-get -y install docker-ce docker-ce-cli containerd.io
+
+#sudo service docker start
+#sudo usermod -a -G docker ec2-user
+#docker ps
+
 #kubernetes
 #kubectl
-#kubectx kubi
-#octant kubelens
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+#kubectl version --client
+
+#kubectx ( alt kubie )
+kubectl krew install ctx
+kubectl krew install ns
+
+#octant ( alt kubelens )
+curl https://github.com/vmware-tanzu/octant/releases/download/v0.24.0/octant_0.24.0_Linux-64bit.deb
+dpkg -i octant_0.24.0_Linux-64bit.deb
+
 #kubeseal
+wget https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.16.0/kubeseal-linux-amd64 -O kubeseal
+sudo install -m 755 kubeseal /usr/local/bin/kubeseal
+
 #minikube k3s kind
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
 #helm
-#flixctl
+sudo snap install helm --classic
+
+#fluxctl
+sudo snap install fluxctl --classic
+
 #istioctl
+# TODO: pending 
 
 #kafka
 #kafkactl
+sudo snap install kafkactl
 
 #db
 #psql
+#sudo apt-get install postgresql-12
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+
 #DBaever
+sudo apt -y install default-jdk
+wget -O - https://dbeaver.io/debs/dbeaver.gpg.key | sudo apt-key add -
+echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
+sudo apt update
+sudo apt install dbeaver-ce
