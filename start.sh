@@ -42,3 +42,8 @@ echo "intellij done" >> $log_file
 
 #asdf - needs homebrew
 #sudo apt-get -y install curl git
+
+#aws cli v2
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
