@@ -1,3 +1,4 @@
+choco install intellijidea-ultimate
 choco install notepadplusplus -y
 choco install kubernetes-cli -y
 #kubectl version
