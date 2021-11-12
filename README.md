@@ -1,3 +1,10 @@
+Before anything, run the following and restar
+
+```bash
+sudo apt-get update
+sudo apt-get upgrade -y
+```
+
 For install tooling
 
 ```bash
